@@ -140,39 +140,6 @@
     </div>
 
 <script src="js/jquery-1.7.2.min.js"></script>
-<script>
-    var curIndex=0;
-    var arr=new Array();
-    arr[0]="img/a.jpg";
-    arr[1]="img/b.jpg";
-    arr[2]="img/c.jpg";
-    arr[3]="img/d.jpg";
-    arr[4]="img/e.jpg";
-    setInterval(changeImg,3000);
-    function changeImg(){
-        var obj=document.getElementById("scroll");
-        if (curIndex==arr.length-1) 
-        {
-            curIndex=0;
-        }
-        else
-        {
-            curIndex+=1;
-        }
-       obj.style.backgroundImage="url("+arr[curIndex]+")";
-    };
-    $(function(){
-        $("#top img").mouseover(function(){
-            $(".top").stop().animate({bottom:"0"},700);
-        }).mouseout(function(){
-            $(".top").stop().animate({bottom:"-70"},700);
-        })
-    })
-
-
-
-
-</script>
-
+<script src="js/total.js"></script>
 </body>
 </html>
