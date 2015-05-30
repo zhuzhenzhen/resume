@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="keywords" content="朱珍珍,web前端开发师">
+    <title>爱喝牛奶的牛奶-照片墙</title>
+    <link href="img/icon.png" rel="shortcut icon">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <base target="_black"></base>
+</head>
+<body>
+    <div id="header">
+        <div id="menu">
+            <a id="blog_logo" href="javascript:void(0);" title="爱喝牛奶的牛奶" target="_self"></a>
+    	    <ul>
+    	        <li>
+                    <a href="z.html" target="_self">首页</a>
+                </li>
+    	        <li class="current_page_item">
+                        <a href="javascript:void(0);">照片墙</a>
+                </li>
+                <li>
+                        <a href="code.html" target="_self">组件代码</a>
+                </li>
+                <li>
+                        <a href="javascript:void(0);">生活随笔</a>
+                </li>
+                <li class="source">
+                    <a href="share.html"target="_self">资源共享</a>
+                    <img src="img/header_new.gif" alt=" ">
+                </li>
+    	    </ul>
+            <div id="search">
+                <form method="post" action="javascript:void(0);" id="searchform">
+                    <input type="text" placeholder="请输入关键字" name="searchtext" id="search-text" >
+                    <input type="submit" value="搜索" id="search-submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- start #contain-->
+    <div id="contain">
+        <div id="scroll">
+            <div class="list">
+                <a><img src="img/a.jpg" class="a"></a>
+                <a><img src="img/b.jpg" class="b"></a>
+                <a><img src="img/c.jpg" class="c"></a>
+                <a><img src="img/d.jpg" class="d"></a>
+                <a><img src="img/e.jpg" class="e"></a>
+          </div>
+        </div>
+        <div id="static">
+            <ul>
+                <li>
+                    <ul class="begin">
+                        <li><img src="img/01.jpg"></li>
+                        <li><img src="img/02.jpg"></li>
+                        <li><img src="img/03.jpg"></li>
+                        <li><img src="img/01.jpg"></li>
+                        <li><img src="img/09.jpg"></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul id="cover">
+                        <li>
+                            <img src="img/06.jpg">
+                            <div class="cover">
+                                beautiful picture!    
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/05.jpg">
+                            <div class="cover">
+                                beautiful picture!    
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/07.jpg">
+                            <div class="cover">
+                                beautiful picture!    
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/08.jpg">
+                            <div class="cover">
+                                beautiful picture!    
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/06.jpg">
+                            <div class="cover">
+                                beautiful picture!    
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li  id="top">
+                            <img src="img/02.jpg">
+                            <div class="top">
+                                beautiful girl&nbsp;!
+                            </div>
+                        </li>
+                        <li><img src="img/09.jpg"></li>
+                        <li><img src="img/10.jpg"></li>
+                        <li><img src="img/06.jpg"></li>
+                        <li><img src="img/09.jpg"></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="end">
+                        <li><img src="img/10.jpg"></li>
+                        <li><img src="img/01.jpg"></li>
+                        <li><img src="img/03.jpg"></li>
+                        <li><img src="img/08.jpg"></li>
+                        <li><img src="img/03.jpg"></li>
+                    </ul>
+                </li>
+             </ul>
+        </div>
+    </div>
+    <div style="clear: both;">&nbsp;</div>
+
+    <!-- start #footer-->
+    <div id="footer">
+        <div>
+            <p>
+                Copyright (c) 2015 . All rights reserved. Design by ZhuZhenzhen
+            </p>
+        </div>
+        <div class="yun">
+            <a href="http://sae.sina.com.cn/" target="_blank" title="云计算服务商">
+                &nbsp;&nbsp;&nbsp;
+                <img alt="云计算服务商" src="img/yun.gif">
+                &nbsp;&nbsp;
+            </a>
+        </div>
+    </div>
+
+<script src="js/jquery-1.7.2.min.js"></script>
+<script>
+    var curIndex=0;
+    var arr=new Array();
+    arr[0]="img/a.jpg";
+    arr[1]="img/b.jpg";
+    arr[2]="img/c.jpg";
+    arr[3]="img/d.jpg";
+    arr[4]="img/e.jpg";
+    setInterval(changeImg,3000);
+    function changeImg(){
+        var obj=document.getElementById("scroll");
+        if (curIndex==arr.length-1) 
+        {
+            curIndex=0;
+        }
+        else
+        {
+            curIndex+=1;
+        }
+       obj.style.backgroundImage="url("+arr[curIndex]+")";
+    };
+    $(function(){
+        $("#top img").mouseover(function(){
+            $(".top").stop().animate({bottom:"0"},700);
+        }).mouseout(function(){
+            $(".top").stop().animate({bottom:"-70"},700);
+        })
+    })
+
+
+
+
+</script>
+
+</body>
+</html>
